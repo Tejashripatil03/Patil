@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly college FAQ chatbot demo.">
+  <title>College FAQ Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true">🎓</div>
+    <div>
+      <p class="eyebrow">STUDENT SUPPORT PORTAL</p>
+      <h1>College FAQ Assistant</h1>
+      <p class="header-subtitle">Quick answers for your college questions</p>
+    </div>
+    <span class="status-pill"><span class="status-dot"></span> Knowledge base online</span>
+  </header>
+
+  <main class="page-layout">
+    <section class="chat-card" aria-label="Chat with the College FAQ Assistant">
+      <div class="chat-heading">
+        <div class="assistant-avatar" aria-hidden="true">🎓</div>
+        <div>
+          <h2>College Help Desk</h2>
+          <p>Rule-based FAQ assistant · Usually replies instantly</p>
+        </div>
+        <button id="clear-chat" class="button button-light" type="button">Clear Chat</button>
+      </div>
+
+      <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+        <article class="message assistant-message">
+          <div class="message-avatar" aria-hidden="true">🎓</div>
+          <div class="message-content">
+            <div class="bubble">Hello! Welcome to the College FAQ Assistant. Ask me anything about admissions, courses, examinations, fees, or placements.</div>
+            <time class="message-time">Welcome</time>
+          </div>
+        </article>
+      </div>
+
+      <div class="suggestions-area">
+        <p class="small-label">TRY ASKING</p>
+        <div class="suggestion-list">
+          <button class="suggestion-chip" type="button" data-question="How can I apply for admission?">How do I apply?</button>
+          <button class="suggestion-chip" type="button" data-question="Which courses does the college offer?">Available courses</button>
+          <button class="suggestion-chip" type="button" data-question="When are semester examinations conducted?">Exam schedule</button>
+          <button class="suggestion-chip" type="button" data-question="Does the college provide placement assistance?">Placements</button>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-input-area">
+        <label class="sr-only" for="user-input">Type your question</label>
+        <input id="user-input" name="question" type="text" autocomplete="off" placeholder="Type your question here..." maxlength="500">
+        <button class="button button-primary" type="submit">Send <span aria-hidden="true">➤</span></button>
+      </form>
+      <p class="privacy-note">Answers come only from the sample FAQ knowledge base. Please verify official details with your college.</p>
+    </section>
+
+    <aside class="sidebar">
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">QUICK LOOKUP</p>
+            <h2>Browse FAQs</h2>
+          </div>
+          <span id="faq-count" class="count-badge">30 questions</span>
+        </div>
+        <label class="sr-only" for="category-filter">Filter FAQs by category</label>
+        <select id="category-filter" class="category-filter">
+          <option value="all">All categories</option>
+          <option value="Admissions">Admissions</option>
+          <option value="Courses">Courses</option>
+          <option value="Examinations">Examinations</option>
+          <option value="Fees and Scholarships">Fees &amp; Scholarships</option>
+          <option value="Placements">Placements</option>
+        </select>
+        <div id="faq-list" class="faq-list"></div>
+      </section>
+      <section class="notice-panel">
+        <div class="notice-icon" aria-hidden="true">ℹ</div>
+        <div>
+          <h3>Project demo notice</h3>
+          <p>Dates, fees, eligibility criteria, courses, and policies in this demo are illustrative. Replace them with verified information from your actual college before publishing.</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <section class="testing-section">
+    <div class="testing-heading">
+      <div>
+        <p class="eyebrow">QUALITY CHECK</p>
+        <h2>Chatbot Testing</h2>
+        <p>Run the built-in test cases to check expected matching and fallback behavior.</p>
+      </div>
+      <button id="run-tests" class="button button-primary" type="button">Run Tests</button>
+    </div>
+    <div class="test-summary" id="test-summary" aria-live="polite">Tests have not been run yet.</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Test ID</th><th>Input question</th><th>Expected result</th><th>Actual result</th><th>Status</th></tr>
+        </thead>
+        <tbody id="test-results">
+          <tr><td colspan="5" class="empty-tests">Select “Run Tests” to execute the five test cases.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>College FAQ Assistant <span>•</span> HTML, CSS &amp; Vanilla JavaScript</p>
+    <p>Knowledge-base demo — not a generative AI system.</p>
+  </footer>
+
+  <script src="faq-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
